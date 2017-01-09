@@ -1,9 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var MovieList = require('./components/MovieList.jsx');
 
 window.onload = function(){
   ReactDOM.render(
-    <h2> Uk Opening This Week  </h2>,
+    <MovieList title= "UK Opening This Week">,
     document.getElementById('app')
   );
 }

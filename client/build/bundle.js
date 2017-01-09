@@ -53,7 +53,7 @@
 	  ReactDOM.render(React.createElement(
 	    'h2',
 	    null,
-	    ' Uk Opening This Week  '
+	    ' UK Opening This Week  '
 	  ), document.getElementById('app'));
 	};
 
