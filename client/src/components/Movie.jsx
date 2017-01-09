@@ -5,7 +5,7 @@ var Movie = React.createClass({
     return(
       <div className='movie-title'>
       <h4 className='movie-url'>
-        {this.props.url}
+        {this.props.name}
         </h4>
         <p>{this.props.children}</p>
       </div>

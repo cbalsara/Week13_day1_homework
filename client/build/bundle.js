@@ -19844,7 +19844,7 @@
 	      React.createElement(
 	        'h4',
 	        { className: 'movie-url' },
-	        this.props.url
+	        this.props.name
 	      ),
 	      React.createElement(
 	        'p',
