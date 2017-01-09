@@ -48,13 +48,10 @@
 	
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
+	var MovieList = __webpack_require__(159);
 	
 	window.onload = function () {
-	  ReactDOM.render(React.createElement(
-	    'h2',
-	    null,
-	    ' UK Opening This Week  '
-	  ), document.getElementById('app'));
+	  ReactDOM.render(React.createElement(MovieList, { title: 'UK Opening This Week' }), document.getElementById('app'));
 	};
 
 /***/ },
@@ -19750,6 +19747,109 @@
 	
 	module.exports = __webpack_require__(3);
 
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var MovieTable = __webpack_require__(160);
+	
+	var movies = [{ name: "Sausage Party", url: "http://www.imdb.com/title/tt1700841?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_t0", showTimesURL: "http://www.imdb.com/showtimes/title/tt1700841?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_gs" }, { name: "Café Society", url: "http://www.imdb.com/title/tt4513674?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_t1", showTimesURL: "http://www.imdb.com/showtimes/title/tt4513674?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_gs" }, { name: "Sausage Party", url: "http://www.imdb.com/title/tt1700841?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_t0", showTimesURL: "http://www.imdb.com/showtimes/title/tt1700841?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_gs" }, { name: "Café Society", url: "http://www.imdb.com/title/tt4513674?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_t1", showTimesURL: "http://www.imdb.com/showtimes/title/tt4513674?pf_rd_m=A2FGELUUNOQJNL&pf_rd_p=1970868962&pf_rd_r=10B79GWTXE5MERRSR82F&pf_rd_s=right-2&pf_rd_t=15061&pf_rd_i=homepage&ref_=hm_otw_gs" }];
+	// propTypes:{
+	//   title: React.propTypes.string.isRequired
+	// }
+	
+	var MovieList = React.createClass({
+	  displayName: 'MovieList',
+	
+	  getInitialState: function getInitialState() {
+	    return { data: movies };
+	  },
+	
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'movie-list' },
+	      '// ',
+	      React.createElement(
+	        'h2',
+	        null,
+	        ' ',
+	        this.props.title,
+	        ' '
+	      ),
+	      React.createElement(MovieTable, { films: this.state.data })
+	    );
+	  }
+	});
+	
+	module.exports = MovieList;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var Movie = __webpack_require__(161);
+	
+	var MovieTable = React.createClass({
+	  displayName: 'MovieTable',
+	
+	  render: function render() {
+	
+	    var movieComponents = this.props.films.map(function (movieObject) {
+	      return React.createElement(
+	        Movie,
+	        {
+	          name: movieObject.name },
+	        movieObject.url
+	      );
+	    });
+	
+	    return React.createElement(
+	      'div',
+	      { className: 'movie-list' },
+	      movieComponents
+	    );
+	  }
+	});
+	
+	module.exports = MovieTable;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var Movie = React.createClass({
+	  displayName: 'Movie',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { className: 'movie-title' },
+	      React.createElement(
+	        'h4',
+	        { className: 'movie-url' },
+	        this.props.url
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        this.props.children
+	      )
+	    );
+	  }
+	});
+	module.exports = Movie;
 
 /***/ }
 /******/ ]);

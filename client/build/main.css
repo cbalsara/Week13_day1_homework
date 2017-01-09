@@ -2,7 +2,7 @@ body{
   font-family: Verdana;
 }
 
-.counter-box, .comment-box{
+.counter-box, .movie-box{
   border: 2px solid mediumaquamarine;
   border-radius: 5px;
   padding: 10px;
