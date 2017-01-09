@@ -51,9 +51,9 @@
 	
 	window.onload = function () {
 	  ReactDOM.render(React.createElement(
-	    'h1',
+	    'h2',
 	    null,
-	    ' App Started '
+	    ' Uk Opening This Week  '
 	  ), document.getElementById('app'));
 	};
 

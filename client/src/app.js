@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 
 window.onload = function(){
   ReactDOM.render(
-    <h1> App Started </h1>,
+    <h2> Uk Opening This Week  </h2>,
     document.getElementById('app')
   );
 }
