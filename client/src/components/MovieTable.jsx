@@ -9,6 +9,9 @@ var MovieTable = React.createClass({
         <Movie
         name ={movieObject.name}>
         {movieObject.url}
+        <p>
+        {movieObject.showTimesURL}
+        </p>
         </Movie>)
     });
 

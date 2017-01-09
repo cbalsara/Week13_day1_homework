@@ -19807,7 +19807,12 @@
 	        Movie,
 	        {
 	          name: movieObject.name },
-	        movieObject.url
+	        movieObject.url,
+	        React.createElement(
+	          'p',
+	          null,
+	          movieObject.showTimesURL
+	        )
 	      );
 	    });
 	
