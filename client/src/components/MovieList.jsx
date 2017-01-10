@@ -24,6 +24,8 @@ render: function(){
     </div>
     );
   }
+
+
 });
 
 module.exports = MovieList;

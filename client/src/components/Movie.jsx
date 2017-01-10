@@ -3,11 +3,15 @@ var React = require('react');
 var Movie = React.createClass({
   render: function(){
     return(
-      <div className='movie-title'>
-      <h4 className='movie-url'>
+      <div 
+      className='movie-url'>
+      <p className='movie-title'>
         {this.props.name}
-        </h4>
-        <p>{this.props.children}</p>
+        </p>
+        <p 
+        className='movie-information'>
+        {this.props.children}
+        </p>
       </div>
       )
     }

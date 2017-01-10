@@ -8,7 +8,9 @@ var MovieTable = React.createClass({
       return (
         <Movie
         name ={movieObject.name}>
+        <p>
         {movieObject.url}
+        </p>
         <p>
         {movieObject.showTimesURL}
         </p>

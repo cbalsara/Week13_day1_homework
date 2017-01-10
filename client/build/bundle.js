@@ -19784,6 +19784,7 @@
 	      React.createElement(MovieTable, { films: this.state.data })
 	    );
 	  }
+	
 	});
 	
 	module.exports = MovieList;
@@ -19807,7 +19808,11 @@
 	        Movie,
 	        {
 	          name: movieObject.name },
-	        movieObject.url,
+	        React.createElement(
+	          'p',
+	          null,
+	          movieObject.url
+	        ),
 	        React.createElement(
 	          'p',
 	          null,
@@ -19840,15 +19845,17 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      { className: 'movie-title' },
+	      {
+	        className: 'movie-url' },
 	      React.createElement(
-	        'h4',
-	        { className: 'movie-url' },
+	        'p',
+	        { className: 'movie-title' },
 	        this.props.name
 	      ),
 	      React.createElement(
 	        'p',
-	        null,
+	        {
+	          className: 'movie-information' },
 	        this.props.children
 	      )
 	    );
